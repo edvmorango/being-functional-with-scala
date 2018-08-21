@@ -66,3 +66,72 @@ object Syntax_03 {
   var inference = 10
 
 }
+
+//ifs
+object Syntax_04 {
+
+  // "Ifs" have the same characteristics of any programming language
+  if(1 == 1) {
+    println("1 equals 1")
+  }
+
+  // If the statements have just one line, the brackets can be skipped
+  if(1 == 2)
+    println("1 equals 2")
+  else
+    println("1 is not 2")
+
+  // Scala do not have a syntax for ternaries, but they're simply unnecessary
+  if(true) println("1 equals 2") else println("1 is not 2")
+
+  /* The relational operators of Scala are:
+   == (Equals)
+   != (Not equals)
+   >  (Greater than)
+   <  (Less than)
+   >= (Greater or equals than)
+   <= (Lesser or equals than)
+  */
+
+
+  /* The logical operators of Scala are:
+    && (And)
+    || (Or)
+    ! (Not)
+   */
+
+}
+
+// Loops
+object Syntax_05 {
+
+  // Scala supports repetition structures: for, while and do while
+
+  //while
+  var a = 0
+  while(a < 3){
+    println(a)
+    a += 1
+  }
+
+  //do while
+  var b = 3
+
+  do {
+    println(b)
+    b -= 1
+  } while (b != 0)
+
+  // for
+  for (x <- 1 to 5){
+    println(x)
+  }
+
+}
+
+// Executing a application
+object Syntax_06 extends App {
+
+  println("If a object extends \"App\", he becomes executable")
+
+}
