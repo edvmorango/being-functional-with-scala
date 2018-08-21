@@ -144,5 +144,18 @@ object Syntax_06 extends App {
 }
 
 // Imports
+object Syntax_07 extends App {
+  //Imports hiearchy are: package.package.Class
+  import scala.math.max
 
+  //It's possible import everything inside package using *
+  //import scala.math.*
+
+  //It's possible import more than one class/object/trait for the same package
+  import scala.collection.{SortedMap, SortedSet}
+
+  //It's possible set a alias to imports
+  import scala.collection.{Iterable => IT}
+  val anyVal: Iterable[String] =  IT.empty
+}
 
