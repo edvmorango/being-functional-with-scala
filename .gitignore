@@ -25,7 +25,7 @@
 .idea/**/libraries
 .idea/vcs.xml
 target/scala-2.12/*
-
+target/*
 project/target/*
 # Gradle and Maven with auto-import
 # When using Gradle or Maven with auto-import, you should exclude module files,
