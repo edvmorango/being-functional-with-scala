@@ -63,7 +63,14 @@ object Syntax_03 {
   // The compiler can infer functions results too
   def inferFunction(a: Int) = a
 
-  var inference = 10
+  val infered = inferFunction(10)
+
+  // Scala functions accepts default arguments
+  def funcWithDefaults(arg1: Int, arg2: Int = 10): Int = arg1 + arg2
+
+  val res1 = funcWithDefaults(10) // 20
+  val res2 = funcWithDefaults(10, 20) // 30
+
 
 }
 
@@ -135,3 +142,7 @@ object Syntax_06 extends App {
   println("If a object extends \"App\", he becomes executable")
 
 }
+
+// Imports
+
+
