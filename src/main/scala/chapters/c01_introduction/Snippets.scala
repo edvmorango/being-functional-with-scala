@@ -1,5 +1,7 @@
 package chapters.c01_introduction
 
+import java.time.LocalDateTime
+
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 import scala.util.Random
@@ -144,7 +146,7 @@ object Snippet_07 {
 
   def manyOperations(a: Int): Int = {
     val suc = succ(a)
-    val doubleSuc = doubleSuc(suc)
+    val doubleSuc = double(suc)
     ant(doubleSuc)
   }
 
@@ -161,7 +163,6 @@ object Snippet_08 {
 
   doubleSlow(1) // 2 after 10 seconds
   doubleSlow(1) // 2 after 10 seconds
-
 
 
   def doubleMemoized(a: Int, cache: Map[Int, Int]): (Int, Map[Int, Int]) = {
