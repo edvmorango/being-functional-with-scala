@@ -45,18 +45,19 @@ object Snippet_03 {
 
 }
 
-// High-order functions
+// First-class and High-order functions
 object Snippet_04 {
 
-  def double(a: Int): Int = a * 2
+  def double(a: Int, fun: Int => Int): Int = fun(a)
 
-  def sum(a: Int, b: Int): Int = a + b
+  double(2, (a: Int) => 2 * a ) // 4
 
-  sum(10, double(5))
+  def multiplyFor(a: Int): Int => Int = { b: Int =>  a * b}
 
-  def doubleSum(a: Int, b: Int): Int = double(sum(a, b))
+  val triple = multiplyFor(3)
 
-  doubleSum(5, 5)
+  triple(2) // 6
+
 }
 
 
