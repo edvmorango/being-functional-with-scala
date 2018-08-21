@@ -12,14 +12,16 @@ object Exercises {
 
   def multipleNumber(a: Int, b: Int): Boolean = ???
 
-  def greaterThan(a: Int, b: Float): Boolean = ???
+  def greaterThan(a: Int, b: Double): Boolean = ???
 
-  def percentage(n: Float, total: Float): Int = ???
+  def percentage(n: Double, total: Double): Int = ???
 
   def fullName(name: String, lastName: String): String = ???
 
   def firstLetter(phrase: String): Char = ???
 
-  def firstLetterIsUppercase(phrase: String): Boolean = ???
+  def isUppercase(char: Char): Boolean = ???
+
+  def firstLetterIsUppercase(phrase: String, f: String => Char, g: Char => Boolean ): Boolean = ???
 
 }
