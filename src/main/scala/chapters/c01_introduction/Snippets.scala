@@ -148,6 +148,45 @@ object Snippet_07 {
     ant(doubleSuc)
   }
 
+}
 
+//Memoization
+object Snippet_08 {
+
+
+  def doubleSlow(a: Int): Int = {
+    Thread.sleep(10000)
+    a * 2
+  }
+
+  doubleSlow(1) // 2 after 10 seconds
+  doubleSlow(1) // 2 after 10 seconds
+
+
+
+  def doubleMemoized(a: Int, cache: Map[Int, Int]): (Int, Map[Int, Int]) = {
+
+    val output: Option[Int] = cache.get(a)
+
+    if(output.isDefined) {
+      (output.get, cache)
+    } else {
+      val result = doubleSlow(a)
+      val tuple = (a, result)
+      (result, memo + tuple )
+    }
+
+  }
+
+  val memo: Map[Int, Int] = Map()
+
+  val result: (Int, Map[Int, Int]) = doubleMemoized(1, memo) // 2 after 10 seconds
+
+  doubleMemoized(1, result._2) // 2 fast
 
 }
+
+
+
+
+
