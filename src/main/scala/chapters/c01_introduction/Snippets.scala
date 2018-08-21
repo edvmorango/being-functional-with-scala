@@ -187,7 +187,24 @@ object Snippet_08 {
 
 }
 
+//Currying and partial application
+object Snippet_09 {
+
+  def sum(a: Int, b: Int): Int = a + b
+
+  sum(5,1) // 6
+  sum(5,2) // 7
+  sum(5,5) // 10
+
+  def sumCurried(a: Int): Int => Int = {
+    b: Int => a + b
+  }
 
 
+  val partialSum: Int => Int = sumCurried(5)
 
+  partialSum(1) // 6
+  partialSum(2) // 7
+  partialSum(5) // 10
 
+}
