@@ -104,6 +104,7 @@ object Snippet_06 {
 
 }
 
+//Referential transparency
 object Snippet_07 {
 
   def encrypt(password: String): String = {
@@ -129,8 +130,8 @@ object Snippet_07 {
   oneMoreFunction(encrypt("password123"))
 
   someFunction("!QAZ@SX#EDC")
-  anotherFunction(encrypt("!QAZ@SX#EDC"))
-  oneMoreFunction(encrypt("!QAZ@SX#EDC"))
+  anotherFunction("!QAZ@SX#EDC")
+  oneMoreFunction("!QAZ@SX#EDC")
 
   encrypt("password123") == "!QAZ@SX#EDC"
 
