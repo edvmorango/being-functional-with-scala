@@ -2,7 +2,7 @@ package chapters.c01_introduction
 
 
 
-// Val
+// Val and types
 object Syntax_01 {
 
   // val is a keyword to constants
@@ -10,6 +10,17 @@ object Syntax_01 {
   // : String is the function type
   // "value" is the constant value
   val constName: String = "Value"
+
+  // Scala don't have primitives, the "basic types" are:
+  // Int
+  // Float
+  // Double
+  // Long
+  // Short
+  // Byte
+  // Char
+  // Unit
+  // Boolean
 
   // A constant is a expression
   val expression: Int = {
