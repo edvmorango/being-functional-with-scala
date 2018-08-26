@@ -24,8 +24,8 @@ object Snippet_01 {
 
 }
 
-// Tuples and Syntax sugar
-object Snippet_02 extends App{
+// Tuples
+object Snippet_02 {
 
   // A tuple is a composition of values
   // (Type, Type, ...)
@@ -49,8 +49,8 @@ object Snippet_02 extends App{
   val desugaredTuple = Tuple2("_1", "_2")
 
   /* Tuples, Collections are examples of types who depends other types to exists
-    ... : IncompleteType[Type, Type2, Type3] = ...
-    And of course, the compiler can help us with that           */
+   * ... : IncompleteType[Type, Type2, Type3] = ...
+   * And of course, the compiler can help us with that           */
   val explicitTuple: Tuple3[String, Int, Char] =  Tuple3("_1", 2 , '3')
 
   // The infix syntactic sugar operates normally with the desugared syntax
@@ -63,4 +63,22 @@ object Snippet_02 extends App{
 
 }
 
+// Syntax sugar
+object Snippet_03 {
+
+  /*
+  * Programming languages are a wide studies area, one of his topics is about
+  * Syntax and Semantics, those concepts exist into a infinitude of study areas,
+  * explaining them in a shallow way:
+  * While syntax is about "express something"(symbol), semantics is the "something"(content)
+  *
+  * The same number(content) can be expressed in many forms(symbols): Three, 3, III, ...
+  * And of course in certain contexts some symbols express better some ideas
+  *
+  * Functional programming loves the idea of a declarative syntax. So, in programming(generally)
+  * we can change some syntax for other more expressive without change the semantics, the programmers
+  * named it "Syntactic sugar", and by using this idea cautiously we can say much more writing less
+  * */
+
+}
 
