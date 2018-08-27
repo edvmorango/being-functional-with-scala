@@ -73,12 +73,39 @@ object Snippet_03 {
   * While syntax is about "express something"(symbol), semantics is the "something"(content)
   *
   * The same number(content) can be expressed in many forms(symbols): Three, 3, III, ...
-  * And of course in certain contexts some symbols express better some ideas
+  * And of course in certain contexts some symbols express better some ideas, brings
+  * the possibility of new operations and sometimes new branches of study.
+  *
+  * Example: When using "III" we cannot use division, one of the most basic operations
+  * is simply useless when we don't use "supported" symbols.
   *
   * Functional programming loves the idea of a declarative syntax. So, in programming(generally)
   * we can change some syntax for other more expressive without change the semantics, the programmers
   * named it "Syntactic sugar", and by using this idea cautiously we can say much more writing less
+  *
   * */
+
+  // Example 1: Tuples
+
+  // Semantics  =   "(1,2)"
+
+  //          syntax
+  val tuple = Tuple2(1, 2)
+
+  //            syntax
+  val tuple2  = (1, 2)
+
+  // Example 2: Instances
+
+  // Semantics = "Some string"
+
+  //                      syntax
+  val desugaredInstance = new String("Some string")
+
+  //                    syntax
+  val sugaredInstance = "Some string"
+
+  // Many parts of the Scala API and several other programming languages use this artifice.
 
 }
 
