@@ -109,3 +109,30 @@ object Snippet_03 {
 
 }
 
+// Total functions
+object Snippet_04 {
+
+
+  // Total function
+  def sum(a: Int, b: Int): Int = a + b
+
+  def convertToString(a: Int): String = a.toString
+
+  // Partial function unhandled
+  def division(a: Double , b: Double): Double = a / b
+
+  def convertToInt(a: String): Int = a.toInt
+
+  // Partial functions handled
+
+  def divisionHandled(a: Double , b: Double): Double = {
+    if(b == 0)
+      throw new ArithmeticException("Divisor cannot be 0")
+    else
+      a / b
+  }
+
+  def convertStringToInt(a: String): Int = { ??? }
+
+
+}
