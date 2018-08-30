@@ -2,7 +2,7 @@ package chapters.c01_introduction
 
 object Exercises {
 
-  def sum(a: Int, b: Int): Int = ???
+  def sum(a: Int, b: Int): Int = a + b
 
   def factorial(n: Int): Int = ???
 

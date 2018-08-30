@@ -32,14 +32,14 @@ class C01_Exercises extends WordSpec with MustMatchers {
       Exercises.fibonacci(-1) mustBe -1
       Exercises.fibonacci(0)  mustBe 0
 
-      Exercises.fibonacci(5)  mustBe 55
+      Exercises.fibonacci(10)  mustBe 55
 
     }
 
     "pow(5,2) should be 25" in {
 
       Exercises.pow(5, -1) mustBe -1
-      Exercises.pow(5, 0) mustBe 0
+      Exercises.pow(5, 0) mustBe 1
       Exercises.pow(5, 2) mustBe 25
 
     }
@@ -62,7 +62,7 @@ class C01_Exercises extends WordSpec with MustMatchers {
     "25 should be 10% of 250" in {
 
       Exercises.percentage(25.5, 250) mustBe 10
-      Exercises.percentage(24.7, 250) mustBe 10
+      Exercises.percentage(24.7, 250) mustBe 9
       Exercises.percentage(25.4, 250) mustBe 10
       Exercises.percentage(25.0, 250) mustBe 10
 
@@ -89,7 +89,7 @@ class C01_Exercises extends WordSpec with MustMatchers {
 
    "firstLetterIsUppercase(\"scala is nice\") should be false" in {
 
-     ???
+     Exercises.firstLetterIsUppercase(???, ??? , ??? ) mustBe true
 
    }
 

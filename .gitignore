@@ -5,6 +5,7 @@ project/
 target/
 build/
 .idea/*
+.idea/workspace.xml
 # eclipse
 build
 .classpath
