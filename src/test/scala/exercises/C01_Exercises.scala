@@ -17,18 +17,17 @@ class C01_Exercises extends WordSpec with MustMatchers {
 
     "5! should be 120" in {
 
-      Exercises.factorial(-5) mustBe -1
+//      Exercises.factorial(-...) mustBe -1
       Exercises.factorial(-1) mustBe -1
       Exercises.factorial(0)  mustBe 1
       Exercises.factorial(1)  mustBe 1
-
       Exercises.factorial(5)  mustBe 120
 
     }
 
     "fibonnaci(10) should be 55" in {
 
-      Exercises.fibonacci(-2) mustBe -1
+//      Exercises.fibonacci(-...) mustBe -1
       Exercises.fibonacci(-1) mustBe -1
       Exercises.fibonacci(0)  mustBe 0
 
@@ -39,6 +38,7 @@ class C01_Exercises extends WordSpec with MustMatchers {
     "pow(5,2) should be 25" in {
 
       Exercises.pow(5, -1) mustBe -1
+      Exercises.pow(0, 0 ) mustBe 1
       Exercises.pow(5, 0) mustBe 1
       Exercises.pow(5, 2) mustBe 25
 
