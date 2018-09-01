@@ -191,3 +191,18 @@ object Snippet_04 {
   //divT.get    -- The unwrapper function, should only be used when the value is filled
 
 }
+
+// Revisiting Immutability
+object Snippet_05 {
+
+
+  val tuple1: (Int, Int, String) = (3, 0, "")
+
+  val tuple2 = tuple1.copy(3, 1, "A")
+
+  val tuple3 = tuple1.copy(3, 2, "B")
+
+  val finish = tuple1.copy(3, 3, "C")
+
+
+}
