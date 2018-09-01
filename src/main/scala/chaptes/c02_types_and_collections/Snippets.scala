@@ -1,5 +1,7 @@
 package chaptes.c02_types_and_collections
 
+import scala.util.Try
+
 
 //Bottom type
 object Snippet_01 {
@@ -132,7 +134,60 @@ object Snippet_04 {
       a / b
   }
 
-  def convertStringToInt(a: String): Int = { ??? }
+  // Partial functions handled
+  def convertStringToInt(a: String): Int = {
+    val isNumeric = a.forall(_.isDigit)
 
+    if(isNumeric)
+      a.toInt
+    else
+      throw new NumberFormatException("Couldn't format")
+  }
+
+  /* But we gotta a problem,
+   * we can't handle the exception inside the functions
+   * and retain the function generality at same time.
+   * Sometimes a failure could be replaced with 0 or -1 or ...
+   * If we have various calls of the same function in different parts
+   * but at same scope handle differently every case will mess our code.
+   * And of course this partial functions will harm the local reasoning and composition
+   * in the caller scope, the failures isn't obvious in more complex functions.
+   */
+
+  //  runtime error
+  //println(convertStringToInt("abc"))
+  //  will never be reached
+  //println(convertStringToInt("123"))
+
+
+  // Converting partial functions to total functions
+
+  // Containers/Wrappers (at least for now)
+
+  // Option: contains a value or nothing  -- Some(value) | None
+  // Try: contains a value or a exception -- Success(value) | Failure(Exception)
+
+
+  def divisionTotalOpt(a: Double, b: Double): Option[Double] =
+    if(b == 0) None else Some(a/b)
+
+  def divisionTotalTry(a: Double, b: Double): Try[Double] = Try(a/b)
+
+  // We recovered local reasoning, we explicitly know about the possible failures
+  // and we can handle them individually with less verbosity, but now, our code
+  // will be attached to containers at certain degree
+
+  val div: Option[Double] = divisionTotalOpt(10, 0)
+
+  div.getOrElse(0) // A default value
+  //  div.get  -- The unwrapper function, should only be used when the value is filled
+  div.isDefined
+
+  val divT: Try[Double] = divisionTotalTry(10, 0)
+
+  divT.isFailure
+  divT.isSuccess
+  divT.getOrElse(0) // A default value
+  //divT.get    -- The unwrapper function, should only be used when the value is filled
 
 }
