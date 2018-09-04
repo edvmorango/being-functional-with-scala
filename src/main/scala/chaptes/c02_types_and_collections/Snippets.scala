@@ -39,6 +39,10 @@ object Snippet_02 {
   // The compiler have the capability of infer the types
   val tupleIntDouble = (10, 10.0)
 
+  tupleIntDouble._1
+
+  tupleIntDouble._2
+
   // A tuple may have up to 22 elements
   val tuple22 = (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22)
 
@@ -65,8 +69,23 @@ object Snippet_02 {
 
 }
 
+// Composing Functions
+object Snippet_03 extends App{
+
+  def double(a: Int): Int = a * 2
+
+  def convertToString(a: Int): String = a.toString
+
+  def composer(a: Int, f: Int => Int, g: Int => String): String = g(f(a))
+
+  composer(10, double, convertToString)
+
+
+}
+
+
 // Syntax sugar
-object Snippet_03 {
+object Snippet_04 {
 
   /*
   * Programming languages are a wide studies area, one of his topics is about
@@ -111,14 +130,18 @@ object Snippet_03 {
 
 }
 
-// Total functions
-object Snippet_04 {
+// Total functions | Partial Functions | Type Reasoning | Wrapping Types
+object Snippet_05 {
 
 
   // Total function
-  def sum(a: Int, b: Int): Int = a + b
+  def double(a: Int): Int = a * 2
 
   def convertToString(a: Int): String = a.toString
+
+  // Composing total functions
+
+  def doubleConvertToString(a: Int, f: Int => Int, g: Int => String): String = g(f(a))
 
   // Partial function unhandled
   def division(a: Double , b: Double): Double = a / b
@@ -126,7 +149,6 @@ object Snippet_04 {
   def convertToInt(a: String): Int = a.toInt
 
   // Partial functions handled
-
   def divisionHandled(a: Double , b: Double): Double = {
     if(b == 0)
       throw new ArithmeticException("Divisor cannot be 0")
@@ -144,7 +166,15 @@ object Snippet_04 {
       throw new NumberFormatException("Couldn't format")
   }
 
-  /* But we gotta a problem,
+  // Composing with Type Reasoning
+
+  def convertDoubleToString(a: Double): String = a.toString
+
+  def composer(a: Double, b: Double, f: (Double, Double) => Double , g: Double => String ): String = g(f(a,b))
+
+  composer(10, 10, divisionHandled, convertDoubleToString)
+
+  /* We gotta a problem,
    * we can't handle the exception inside the functions
    * and retain the function generality at same time.
    * Sometimes a failure could be replaced with 0 or -1 or ...
@@ -179,6 +209,18 @@ object Snippet_04 {
 
   val div: Option[Double] = divisionTotalOpt(10, 0)
 
+  // Composing wrapped values
+  def composerWrapped(a: Double,
+                      b: Double,
+                      f: (Double, Double) => Option[Double],
+                      g: Double => String ): Option[String] = f(a,b).map(g)
+
+  composerWrapped(10, 0, divisionTotalOpt, convertDoubleToString)
+
+  divisionTotalOpt(10, 0).map(convertDoubleToString)
+
+
+  // Useful functions
   div.getOrElse(0) // A default value
   //  div.get  -- The unwrapper function, should only be used when the value is filled
   div.isDefined
@@ -193,7 +235,7 @@ object Snippet_04 {
 }
 
 // Revisiting Immutability
-object Snippet_05 {
+object Snippet_06 {
 
 
   val tuple1: (Int, Int, String) = (3, 0, "")
