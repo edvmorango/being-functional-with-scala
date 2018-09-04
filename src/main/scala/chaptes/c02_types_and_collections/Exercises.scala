@@ -6,7 +6,7 @@ object Exercises {
 
 
 
-  def cashIn(acc: Double, structure: (String, Double)): (String, Double) = ???
+  private def cashIn(acc: Double, structure: (String, Double)): (String, Double) = ???
 
   def processOrders(n: Int, clientName: String): (String, Double) = ???
 
